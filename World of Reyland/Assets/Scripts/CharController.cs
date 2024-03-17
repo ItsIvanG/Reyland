@@ -36,6 +36,8 @@ public class CharController : MonoBehaviour
     private void FixedUpdate() {
         Move(x);
         GroundCheck();
+
+        CapsuleCollider2D capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     private void GroundCheck()
@@ -55,6 +57,7 @@ public class CharController : MonoBehaviour
         {
             isGrounded = false;
         }
+
     }
 
     private void Move(float dir){
