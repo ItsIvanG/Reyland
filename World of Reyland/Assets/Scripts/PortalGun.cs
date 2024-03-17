@@ -11,14 +11,17 @@ public class PortalGun : MonoBehaviour
     Camera cam;
     public Ray2D ray;
     public RaycastHit2D hit;
+    LineRenderer lr;
     private void Start()
     {
         Player = FindFirstObjectByType<CharController>().gameObject;
         cam = Camera.main;
+        lr = GetComponent<LineRenderer>();
     }
     void Update()
     {
 
+       
         mouseCursor = cam.ScreenToWorldPoint(Input.mousePosition);
 
         
@@ -35,6 +38,9 @@ public class PortalGun : MonoBehaviour
             PortalTest.transform.rotation = Quaternion.Euler(0,0, hit.normal.y * 90f);
 
         }
+
+        lr.SetPosition(0, ray.origin);
+        lr.SetPosition(1, hit.point);
 
 
     }
