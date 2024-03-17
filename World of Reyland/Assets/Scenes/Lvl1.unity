@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &76636412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 76636414}
+  - component: {fileID: 76636413}
+  m_Layer: 0
+  m_Name: PortalManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &76636413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76636412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a01ef8dc727884b9bfbca445c304d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portal1Scene: {fileID: 0}
+  portal2Scene: {fileID: 0}
+  PortalPrefab: {fileID: 2018734740124308856, guid: 31b9646f66cc50b4fbe7e7bec535996d, type: 3}
+--- !u!4 &76636414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76636412}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9493923, y: -1.2314572, z: 0.9574576}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &138580026
 GameObject:
   m_ObjectHideFlags: 0
@@ -16167,6 +16214,37 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &186774365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 186774366}
+  m_Layer: 0
+  m_Name: checkWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &186774366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186774365}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.119, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1318667070}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &297791525
 GameObject:
   m_ObjectHideFlags: 0
@@ -29264,6 +29342,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  mouseCursor: {x: 0, y: 0}
 --- !u!70 &597562231
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -29313,6 +29392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 597562225}
   PortalTest: {fileID: 1318667068}
+  mouseCursor: {x: 0, y: 0}
 --- !u!1 &1311876730
 GameObject:
   m_ObjectHideFlags: 0
@@ -29353,6 +29433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318667070}
+  - component: {fileID: 1318667071}
   m_Layer: 0
   m_Name: PortalTest
   m_TagString: Untagged
@@ -29370,12 +29451,33 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.007, y: -0.001, z: 1.1124326}
-  m_LocalScale: {x: 2.6617, y: 2.6617, z: 2.6617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2022948670}
+  - {fileID: 186774366}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318667071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318667068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4455b7b05fe0f48b2c7d328ac6dd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkWall: {fileID: 186774365}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  PortalSprites:
+  - {fileID: 21300000, guid: 894a78f06141eee4395740957d1f86ce, type: 3}
+  whatPortal: 0
+  PortalActive: 1
 --- !u!1 &1367800186
 GameObject:
   m_ObjectHideFlags: 0
@@ -30164,8 +30266,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ea9b20fdb2c574d4ebdf84e0b833504d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 894a78f06141eee4395740957d1f86ce, type: 3}
+  m_Color: {r: 0, g: 1, b: 0.16215563, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -30183,3 +30285,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 597562227}
   - {fileID: 1318667070}
+  - {fileID: 76636414}

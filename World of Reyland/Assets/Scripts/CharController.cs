@@ -17,10 +17,12 @@ public class CharController : MonoBehaviour
     bool isGrounded;
     [SerializeField] Transform groundCheckCollider;
     [SerializeField] LayerMask groundLayer;
+    Camera cam;
+    public Vector2 mouseCursor;
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
-
+        cam = Camera.main; 
         startingScale = transform.localScale.x;
     }
 
@@ -31,6 +33,17 @@ public class CharController : MonoBehaviour
         {
             Jump();
         }
+
+        mouseCursor = cam.ScreenToWorldPoint(Input.mousePosition);
+        if (mouseCursor.x < transform.position.x)
+        {
+            facingRight = false;
+        }
+        else
+        {
+            facingRight = true;
+        }
+
     }
 
     private void FixedUpdate() {
@@ -66,14 +79,15 @@ public class CharController : MonoBehaviour
   
         Vector2 targetVel = new Vector2(xVel, rb.velocity.y);
         rb.velocity = targetVel;
-        if(facingRight && dir < 0){
+        if(facingRight ){
 
-            transform.localScale = new Vector3(-1 * (invertSprite ? 1 : -1),1,1) * startingScale;
-            facingRight = false;
+            transform.localScale = new Vector3(1 * (invertSprite ? 1 : -1),1,1) * startingScale;
 
-        } else if (!facingRight && dir > 0){
-            transform.localScale = new Vector3(1 * (invertSprite ? 1 : -1), 1,1) * startingScale;
-            facingRight = true;
+
+        } else if (!facingRight ){
+
+            transform.localScale = new Vector3(-1 * (invertSprite ? 1 : -1), 1,1) * startingScale;
+
         }
     }
 

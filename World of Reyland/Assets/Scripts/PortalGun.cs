@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class PortalGun : MonoBehaviour
 {
-   [SerializeField] GameObject Player;
+   [SerializeField] public GameObject Player;
     [SerializeField] GameObject PortalTest;
-    Vector2 mouseCursor;
+    public Vector2 mouseCursor;
     Camera cam;
-    Ray2D ray;
+    public Ray2D ray;
+    public RaycastHit2D hit;
     private void Start()
     {
         Player = FindFirstObjectByType<CharController>().gameObject;
@@ -23,7 +24,7 @@ public class PortalGun : MonoBehaviour
         
         ray = new Ray2D(Player.transform.position, mouseCursor);
         Debug.DrawRay(ray.origin, mouseCursor- (Vector2)Player.transform.position, Color.red);
-        RaycastHit2D hit;
+        
 
         if (hit = Physics2D.Raycast(ray.origin, mouseCursor - (Vector2)Player.transform.position, 200))
         {
