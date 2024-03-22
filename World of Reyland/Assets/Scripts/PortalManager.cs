@@ -43,7 +43,8 @@ public class PortalManager : MonoBehaviour
                 Destroy(portal1Scene);
             }
 
-            if (PortalGun.hit = Physics2D.Raycast(PortalGun.ray.origin, PortalGun.mouseCursor - (Vector2)PortalGun.Player.transform.position, 200))
+            if (PortalGun.hit = Physics2D.Raycast(PortalGun.ray.origin, PortalGun.mouseCursor 
+                - (Vector2)PortalGun.Player.transform.position, 200))
             {
                 GameObject spawnBlue = Instantiate(PortalPrefab);
                 spawnBlue.transform.position = PortalGun.hit.point;

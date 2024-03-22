@@ -47,8 +47,13 @@ public class CharController : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        Move(x);
+
+        if (x != 0)
+        {
+            Move(x);
+        }
         GroundCheck();
+
 
         CapsuleCollider2D capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
